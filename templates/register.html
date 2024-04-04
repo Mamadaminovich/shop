@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}" />
+  </head>
+
+  <body>
+    <div class="main">
+      <h1>Registration</h1>
+      <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        
+        <label for="name">First Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your first name" required />
+    
+        <label for="last">Last Name:</label>
+        <input type="text" id="last" name="last" placeholder="Enter your last name" required />
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+    
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" placeholder="Enter your DOB" required />
+    
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required />
+    
+        <label for="hobby">Hobby:</label>
+        <input type="text" id="hobby" name="hobby" placeholder="Enter your Hobby" required />
+    
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select>
+    
+        <div class="wrap">
+            <button type="submit">Register</button>
+        </div>
+    </form>
+    </div>
+  </body>
+</html>
